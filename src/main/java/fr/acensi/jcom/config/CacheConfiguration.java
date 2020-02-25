@@ -42,6 +42,17 @@ public class CacheConfiguration {
             createCache(cm, fr.acensi.jcom.domain.User.class.getName());
             createCache(cm, fr.acensi.jcom.domain.Authority.class.getName());
             createCache(cm, fr.acensi.jcom.domain.User.class.getName() + ".authorities");
+            createCache(cm, fr.acensi.jcom.domain.Source.class.getName());
+            createCache(cm, fr.acensi.jcom.domain.Skill.class.getName());
+            createCache(cm, fr.acensi.jcom.domain.Skill.class.getName() + ".experiences");
+            createCache(cm, fr.acensi.jcom.domain.Profile.class.getName());
+            createCache(cm, fr.acensi.jcom.domain.Profile.class.getName() + ".contacts");
+            createCache(cm, fr.acensi.jcom.domain.Profile.class.getName() + ".educations");
+            createCache(cm, fr.acensi.jcom.domain.Profile.class.getName() + ".experiences");
+            createCache(cm, fr.acensi.jcom.domain.Education.class.getName());
+            createCache(cm, fr.acensi.jcom.domain.Contact.class.getName());
+            createCache(cm, fr.acensi.jcom.domain.Experience.class.getName());
+            createCache(cm, fr.acensi.jcom.domain.Experience.class.getName() + ".skills");
             // jhipster-needle-ehcache-add-entry
         };
     }

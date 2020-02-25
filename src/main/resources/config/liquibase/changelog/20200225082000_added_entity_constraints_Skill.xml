@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Skill.
+    -->
+    <changeSet id="20200225082000-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="skill_id"
+                                 baseTableName="skill_experience"
+                                 constraintName="fk_skill_experience_skill_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="skill"/>
+
+        <addForeignKeyConstraint baseColumnNames="experience_id"
+                                 baseTableName="skill_experience"
+                                 constraintName="fk_skill_experience_experience_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="experience"/>
+        
+    </changeSet>
+</databaseChangeLog>

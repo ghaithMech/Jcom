@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="skill">
+            <h2><span>Skill</span> {{ skill.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Family</span></dt>
+                <dd>
+                    <span>{{ skill.family }}</span>
+                </dd>
+                <dt><span>Domain</span></dt>
+                <dd>
+                    <span>{{ skill.domain }}</span>
+                </dd>
+                <dt><span>Nature</span></dt>
+                <dd>
+                    <span>{{ skill.nature }}</span>
+                </dd>
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{ skill.name }}</span>
+                </dd>
+                <dt><span>Search Word</span></dt>
+                <dd>
+                    <span>{{ skill.searchWord }}</span>
+                </dd>
+                <dt><span>Experience</span></dt>
+                <dd>
+                    <span *ngFor="let experience of skill.experiences; let last = last">
+                        <a [routerLink]="['/experience', experience?.id, 'view']">{{ experience.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/skill', skill.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="profile">
+            <h2><span>Profile</span> {{ profile.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Firstname</span></dt>
+                <dd>
+                    <span>{{ profile.firstname }}</span>
+                </dd>
+                <dt><span>Lastname</span></dt>
+                <dd>
+                    <span>{{ profile.lastname }}</span>
+                </dd>
+                <dt><span>Email</span></dt>
+                <dd>
+                    <span>{{ profile.email }}</span>
+                </dd>
+                <dt><span>Phone</span></dt>
+                <dd>
+                    <span>{{ profile.phone }}</span>
+                </dd>
+                <dt><span>Birthday</span></dt>
+                <dd>
+                    <span>{{ profile.birthday }}</span>
+                </dd>
+                <dt><span>Residance</span></dt>
+                <dd>
+                    <span>{{ profile.residance }}</span>
+                </dd>
+                <dt><span>Hire Date</span></dt>
+                <dd>
+                    <span>{{ profile.hireDate }}</span>
+                </dd>
+                <dt><span>Salary</span></dt>
+                <dd>
+                    <span>{{ profile.salary }}</span>
+                </dd>
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{ profile.status }}</span>
+                </dd>
+                <dt><span>Total Xp</span></dt>
+                <dd>
+                    <span>{{ profile.totalXp }}</span>
+                </dd>
+                <dt><span>Desired Position</span></dt>
+                <dd>
+                    <span>{{ profile.desiredPosition }}</span>
+                </dd>
+                <dt><span>Photo</span></dt>
+                <dd>
+                    <div *ngIf="profile.photo">
+                        <a (click)="openFile(profile.photoContentType!, profile.photo)">
+                            <img [src]="'data:' + profile.photoContentType + ';base64,' + profile.photo" style="max-width: 100%;" alt="profile image"/>
+                        </a>
+                        {{ profile.photoContentType }}, {{ byteSize(profile.photo) }}
+                    </div>
+                </dd>
+                <dt><span>Mobility</span></dt>
+                <dd>
+                    <span>{{ profile.mobility }}</span>
+                </dd>
+                <dt><span>Driver</span></dt>
+                <dd>
+                    <span>{{ profile.driver }}</span>
+                </dd>
+                <dt><span>Seen</span></dt>
+                <dd>
+                    <span>{{ profile.seen }}</span>
+                </dd>
+                <dt><span>Summary</span></dt>
+                <dd>
+                    <span>{{ profile.summary }}</span>
+                </dd>
+                <dt><span>External</span></dt>
+                <dd>
+                    <span>{{ profile.external }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/profile', profile.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+{
+    "name": "Profile",
+    "fields": [
+        {
+            "fieldName": "firstname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthday",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "residance",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hireDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "salary",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalXp",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "desiredPosition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "photo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "mobility",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "driver",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "seen",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "summary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "external",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "contact",
+            "otherEntityRelationshipName": "profile",
+            "relationshipName": "contact"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "education",
+            "otherEntityRelationshipName": "profile",
+            "relationshipName": "education"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "experience",
+            "otherEntityRelationshipName": "profile",
+            "relationshipName": "experience"
+        }
+    ],
+    "changelogDate": "20200225082100",
+    "entityTableName": "profile",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": "elasticsearch"
+}
