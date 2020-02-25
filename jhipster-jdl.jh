@@ -1,0 +1,71 @@
+entity Source {
+	name String,
+	logo ImageBlob
+}
+
+entity Skill{
+family String,
+domain String,
+nature String,
+name String,
+searchWord String
+}
+
+entity Profile {
+firstname String,
+lastname String,
+email String,
+phone String,
+birthday Instant,
+residance String,
+hireDate Instant,
+salary Long,
+status String,
+totalXp Integer,
+desiredPosition String,
+photo ImageBlob,
+mobility String,
+driver Boolean,
+seen Boolean,
+summary String,
+external Boolean
+}
+
+
+entity Education {
+	diplome String,
+    school String,
+    year Integer    
+}
+
+entity Contact {
+	link String
+}
+
+entity Experience {
+	title String,
+    company String,
+    location String,
+    description String,
+    startAt Instant,
+    endAt Instant
+}
+
+relationship OneToMany {
+    Profile{contact} to Contact,
+    Profile{education} to Education,
+    Profile{experience} to Experience
+}
+
+relationship ManyToOne {
+	Contact{source} to Source
+}
+
+relationship ManyToMany {
+	Skill{experience} to Experience{skill}
+}
+
+search all with elasticsearch
+paginate all with pagination
+service all with serviceClass
+service all with serviceImpl
