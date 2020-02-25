@@ -4,10 +4,20 @@
     <router-outlet name="navbar"></router-outlet>
 </div>
 
+
 <div class="container-fluid">
-    <div class="card jh-card">
-        <router-outlet></router-outlet>
+
+    <div class="row">
+        <div class="col-1">
+            <jhi-menu></jhi-menu>
+        </div>
+
+        <div class="card jh-card col-11">
+
+            <router-outlet></router-outlet>
+        </div>
     </div>
+
 
     <jhi-footer></jhi-footer>
 </div>
